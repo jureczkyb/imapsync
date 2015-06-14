@@ -107,7 +107,8 @@ clean_man:
 	rm -f imapsync.1
 
 W/imapsync.1: imapsync
-	pod2man < /dev/null 
+	which pod2man >/dev/null 2>&1
+	#pod2man < /dev/null 
 	pod2man imapsync > W/imapsync.1
 
 install: testp W/imapsync.1
